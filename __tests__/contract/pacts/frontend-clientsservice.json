@@ -1,0 +1,152 @@
+{
+  "consumer": {
+    "name": "Frontend"
+  },
+  "provider": {
+    "name": "ClientsService"
+  },
+  "interactions": [
+    {
+      "description": "a request for all clients",
+      "providerState": "i have a list of clients",
+      "request": {
+        "method": "GET",
+        "path": "/clients",
+        "headers": {
+          "Accept": "application/json, text/plain, */*"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": [
+          {
+            "firstName": "Lisa",
+            "lastName": "Simpson",
+            "age": 8,
+            "date": "2014-01-01",
+            "id": 1
+          },
+          {
+            "firstName": "Wonder",
+            "lastName": "Woman",
+            "age": 30,
+            "date": "2014-01-01",
+            "id": 2
+          },
+          {
+            "firstName": "Homer",
+            "lastName": "Simpson",
+            "date": "2014-01-01",
+            "age": 39,
+            "id": 3
+          }
+        ],
+        "matchingRules": {
+          "$.body[0].firstName": {
+            "match": "type"
+          },
+          "$.body[0].lastName": {
+            "match": "type"
+          },
+          "$.body[0].age": {
+            "match": "type"
+          },
+          "$.body[0].date": {
+            "match": "regex",
+            "regex": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))?)$"
+          },
+          "$.body[0].id": {
+            "match": "type"
+          },
+          "$.body[1].firstName": {
+            "match": "type"
+          },
+          "$.body[1].lastName": {
+            "match": "type"
+          },
+          "$.body[1].age": {
+            "match": "type"
+          },
+          "$.body[1].date": {
+            "match": "regex",
+            "regex": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))?)$"
+          },
+          "$.body[1].id": {
+            "match": "type"
+          },
+          "$.body[2].firstName": {
+            "match": "type"
+          },
+          "$.body[2].lastName": {
+            "match": "type"
+          },
+          "$.body[2].date": {
+            "match": "regex",
+            "regex": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))?)$"
+          },
+          "$.body[2].age": {
+            "match": "type"
+          },
+          "$.body[2].id": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "a request to create client with firstname and lastname",
+      "providerState": "i create a new client",
+      "request": {
+        "method": "POST",
+        "path": "/clients",
+        "headers": {
+          "Content-Type": "application/json;charset=utf-8"
+        },
+        "body": {
+          "firstName": "Rafaela",
+          "lastName": "Azevedo",
+          "date": "2014-01-01",
+          "age": 29
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "firstName": "Rafaela1",
+          "lastName": "Azevedo1",
+          "age": 291,
+          "date": "2014-01-01",
+          "id": 31
+        },
+        "matchingRules": {
+          "$.body.firstName": {
+            "match": "type"
+          },
+          "$.body.lastName": {
+            "match": "type"
+          },
+          "$.body.age": {
+            "match": "type"
+          },
+          "$.body.date": {
+            "match": "regex",
+            "regex": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))?)$"
+          },
+          "$.body.id": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

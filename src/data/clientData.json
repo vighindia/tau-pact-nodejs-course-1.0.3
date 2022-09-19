@@ -1,0 +1,23 @@
+[
+    {
+        "firstName": "Lisa",
+        "lastName": "Simpson",
+        "age": 8,
+        "date": "2014-01-01",
+        "id": 1
+    },
+    {
+        "firstName": "Wonder",
+        "lastName": "Woman",
+        "age": 30,
+        "date": "1992-01-01",
+        "id": 2
+    },
+    {
+        "firstName": "Homer",
+        "lastName": "Simpson",
+        "age": 39,
+        "date": "1983-01-01",
+        "id": 3
+    }
+]
